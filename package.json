@@ -1,0 +1,72 @@
+{
+	"name": "vscode-case-shifter",
+	"displayName": "vscode-case-shifter",
+	"description": "Change the case of words to camelCase, kebab-case, snake_case and more",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vscode-case-shifter.kebabCase",
+		"onCommand:vscode-case-shifter.camelCase",
+		"onCommand:vscode-case-shifter.studlyCase",
+		"onCommand:vscode-case-shifter.snakeCase"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-case-shifter.kebabCase",
+				"title": "Convert to kebab-case"
+			},
+			{
+				"command": "vscode-case-shifter.camelCase",
+				"title": "Convert to camelCase"
+			},
+			{
+				"command": "vscode-case-shifter.studlyCase",
+				"title": "Convert to StudlyCase"
+			},
+			{
+				"command": "vscode-case-shifter.snakeCase",
+				"title": "Convert to snake_case"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "vscode-case-shifter.kebabCase",
+				"key": "ctrl+shift+k",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "vscode-case-shifter.camelCase",
+				"key": "ctrl+shift+c",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "vscode-case-shifter.studlyCase",
+				"key": "ctrl+shift+s",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "vscode-case-shifter.snakeCase",
+				"key": "ctrl+shift+n",
+				"when": "editorHasSelection"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
