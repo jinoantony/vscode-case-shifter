@@ -2,7 +2,7 @@
 	"name": "vscode-case-shifter",
 	"displayName": "vscode-case-shifter",
 	"description": "Change the case of words to camelCase, kebab-case, snake_case and more",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
