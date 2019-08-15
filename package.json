@@ -3,6 +3,17 @@
 	"displayName": "vscode-case-shifter",
 	"description": "Change the case of words to camelCase, kebab-case, snake_case and more",
 	"version": "1.0.0",
+	"author": {
+		"name": "Jino Antony",
+		"email": "jinoantony99@gmail.com"
+	},
+	"publisher": "JinoAntony",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jinoantony/vscode-case-shifter"
+	},
+	"icon": "images/icon.png",
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -63,9 +74,7 @@
 		"test": "node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.3.1",
 		"vscode": "^1.1.28",
-		"eslint": "^5.13.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
 	}
