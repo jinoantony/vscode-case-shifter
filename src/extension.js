@@ -10,10 +10,6 @@ const vscode = require('vscode');
  */
 function activate(context) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-case-shifter" is now active!');
-
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
@@ -45,14 +41,17 @@ function replaceText(replaceCaseCommand) {
 
 	if (editor) {
 		let document = editor.document;
-		let selection = editor.selection;
-		let selectedWords = document.getText(selection);
-
-		let convertedCase = replaceCaseCommand(selectedWords);
-
+		let selections = editor.selections;
+		let selectedWords, convertedCase;
+		
 		editor.edit(editBuilder => {
-			editBuilder.replace(selection, convertedCase);
+			for(const selection of selections) {
+				selectedWords = document.getText(selection);
+				convertedCase = replaceCaseCommand(selectedWords);
+				editBuilder.replace(selection, convertedCase);
+			}
 		});
+		
 	}
 }
 
